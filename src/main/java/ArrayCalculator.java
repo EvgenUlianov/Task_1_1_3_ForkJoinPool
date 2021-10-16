@@ -15,6 +15,11 @@ public class ArrayCalculator  extends RecursiveTask<Integer> {
     @Override
     protected Integer compute() {
         final int diff = end - start;
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //System.out.println(start + " - " + end);
         return switch (diff) {
             case 0 -> 0;

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        final int NUMBER = 16;
+        final int NUMBER = 1000;
         final int MAX = 1000;
         System.out.println("Задача 3. Калькулятор массива");
 
@@ -21,8 +21,14 @@ public class Main {
         System.out.println("+=");
         currentTimeMillisBegin = System.currentTimeMillis();
         result = 0;
-        for (Integer value: integerList)
+        for (Integer value: integerList){
+            try {
+                Thread.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             result += value;
+        }
         currentTimeMillisEnd = System.currentTimeMillis();
         System.out.println(result);
         System.out.println(currentTimeMillisEnd - currentTimeMillisBegin);
